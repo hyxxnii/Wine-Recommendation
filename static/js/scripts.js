@@ -52,3 +52,13 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+const form = document.querySelector("#contactForm");
+console.log(form.querySelector("input").value);
+function onSubmit(event){
+    event.preventDefault();
+    console.log(form.querySelector("input").value);
+    const result = document.querySelector("#portfolio .container");
+    result.classList.toggle('d-none')
+}
+form.addEventListener("submit", onSubmit);
