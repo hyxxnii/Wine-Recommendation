@@ -67,7 +67,9 @@ function onSubmit(event){
     console.log(form.querySelector("input").value);
     // const: 절대 변수(값 변경 불가능) 할당, let: 변수 (값 변경 가능), var: 옛날 버전
     const result = document.querySelector("#portfolio");
-    result.classList.toggle('d-none')
+    const button = document.querySelector("#submitButton");
+    result.classList.toggle('d-none');
+    button.classList.add('d-none');
 //  toggle: 껐다 켰다 기능 -> 있으면 빼고 없으면 넣는? => 처음에 d-none이 있으니깐 이 함수가 실행되면 d-none 빼라 => visible
 //  addList: 넣기만 하는 기능
 }
