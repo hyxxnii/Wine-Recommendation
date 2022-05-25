@@ -17,14 +17,14 @@ def main_get(name=None):
     else:
         return render_template("main.html")
 
-@app.route("/show_result", methods=['GET', 'POST'])
+@app.route("/show_result", methods=['POST'])
 def show_result(name):
-    # result_dict = food_recommendation(name)
-    # if request.method == "POST":
-    #     return render_template('result.html', json.dumps(result_dict))
-    # 테스트
+    result_dict = food_recommendation(name)
     if request.method == "POST":
-        return render_template('result.html', name)
+        return render_template('main.html', json.dumps(result_dict))
+    # 테스트
+    #if request.method == "POST":
+    #    return render_template('result.html', name)
 
 @app.route('/show_result')
 def about():
