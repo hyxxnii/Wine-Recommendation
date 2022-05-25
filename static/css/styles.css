@@ -11732,7 +11732,7 @@ section#contact {
   background-position: center;
 }
 section#contact .section-heading {
-  color: #fff;
+  color: #fff;''
 }
 section#contact form#contactForm .form-group {
   margin-bottom: 1.5rem;
@@ -11795,4 +11795,8 @@ section#contact form#contactForm {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+section#portfolio h2 {
+  color: black !important;
 }
