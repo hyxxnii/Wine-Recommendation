@@ -38,34 +38,24 @@ wines["wine6"] = {
   fruit: Math.floor(Math.random() * 6),
 };
 
-function check(num_wine, flavorType, amount) {
-  console.log(`${num_wine} : ${flavorType} : ${amount}`);
-  const vb = document.querySelector(
-    `#flavor_wine${num_wine} .${flavorType} .flavor_checkBox .circle:first-child`
-  );
-  const b = document.querySelector(
-    `#flavor_wine${num_wine} .${flavorType} .flavor_checkBox .circle:nth-child(2)`
-  );
-  const s = document.querySelector(
-    `#flavor_wine${num_wine} .${flavorType} .flavor_checkBox .circle:nth-child(3)`
-  );
-  const g = document.querySelector(
-    `#flavor_wine${num_wine} .${flavorType} .flavor_checkBox .circle:nth-child(4)`
-  );
-  const vg = document.querySelector(
-    `#flavor_wine${num_wine} .${flavorType} .flavor_checkBox .circle:nth-child(5)`
-  );
-
+function check(index, flavorType, amount) {
+  console.log(`${index} : ${flavorType} : ${amount}`);
+  const flavor = document.querySelectorAll(".flavor_wine")
+  const veryBad = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(1)`);
+  const bad = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(2)`);
+  const soSo = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(3)`);
+  const good = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(4)`);
+  const veryGood = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(5)`);
   if (amount == 5) {
-    vg.style.backgroundColor = "black";
+    veryGood.style.backgroundColor = "black";
   } else if (amount == 4) {
-    g.style.backgroundColor = "black";
+    good.style.backgroundColor = "black";
   } else if (amount == 3) {
-    s.style.backgroundColor = "black";
+    soSo.style.backgroundColor = "black";
   } else if (amount == 2) {
-    b.style.backgroundColor = "black";
+    bad.style.backgroundColor = "black";
   } else if (amount == 1) {
-    vb.style.backgroundColor = "black";
+    veryBad.style.backgroundColor = "black";
   }
 }
 
