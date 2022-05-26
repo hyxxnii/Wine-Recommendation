@@ -79,7 +79,7 @@ function onSubmit(event){
 
 const tempObj = {
     'id': ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-    'name': ['0n', '1n', '2n', '3n', '4n', '5n', '6n', '7n', '8n', '9n'],
+    'name': ['K1 츠무킨', '1n', '2n', '3n', '4n', '5n', '6n', '7n', '8n', '9n'],
     'kind': ['0k', '1k', '2k', '3k', '4k', '5k', '6k', '7k', '8k', '9k'],
     'sugar': ['0s', '1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s'],
     'acid': ['0a', '1a', '2a', '3a', '4a', '5a', '6a', '7a', '8a', '9a'],
@@ -95,16 +95,22 @@ const resultCardAll = document.querySelectorAll('.portfolio-item');
 const popUpCardAll = document.querySelectorAll('.portfolio-modal');
 function onMakeCard(nth){
     const card = resultCardAll[nth];
-    const name = card.querySelector(".wine-name");
-    const price = card.querySelector(".wine-price");
-    name.innerText = tempObj['name'][nth];
-    price.innerText = tempObj['price'][nth];
+    const name = tempObj['name'][nth];
+
+    const wineImg = card.querySelector("img").src;
+    const wineImgUrl = `../static/assets/img/wineImg/${name}.jpg`;
+    const wineName = card.querySelector(".wine-name");
+    const winePrice = card.querySelector(".wine-price");
+    wineName.innerText = tempObj['name'][nth];
+    winePrice.innerText = tempObj['price'][nth];
+    wineImg = wineImgUrl;
 
     const popUp = popUpCardAll[nth];
     const kind = popUp.querySelector(".wine-kind");
     kind.innerText = tempObj['kind'][nth];
 }
 
+console.log(resultCardAll[0].querySelector("img").src);
 form.addEventListener("submit", onSubmit);
 // form에 무슨 일이 생기는지 계속 듣고 있어라~
 // submit하는 일이 생기면 onSubmit 함수를 실행시켜라
