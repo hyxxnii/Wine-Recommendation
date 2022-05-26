@@ -1,0 +1,17 @@
+.flavor div {
+  display: flex;
+}
+
+.flavor .flavor_type {
+  width: 100px;
+}
+
+.circle {
+  margin: 10px 10px;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border: solid 3px;
+  border-radius: 15px;
+  border-color: black;
+}
