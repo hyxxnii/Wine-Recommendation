@@ -97,13 +97,13 @@ function onMakeCard(nth){
     const card = resultCardAll[nth];
     const name = tempObj['name'][nth];
 
-    const wineImg = card.querySelector("img").src;
+    const wineImg = card.querySelector("img");
     const wineImgUrl = `../static/assets/img/wineImg/${name}.jpg`;
     const wineName = card.querySelector(".wine-name");
     const winePrice = card.querySelector(".wine-price");
     wineName.innerText = tempObj['name'][nth];
     winePrice.innerText = tempObj['price'][nth];
-    wineImg = wineImgUrl;
+    wineImg.src = wineImgUrl;
 
     const popUp = popUpCardAll[nth];
     const kind = popUp.querySelector(".wine-kind");
