@@ -39,7 +39,6 @@ wines["wine6"] = {
 };
 
 function check(index, flavorType, amount) {
-  console.log(`${index} : ${flavorType} : ${amount}`);
   const flavor = document.querySelectorAll(".flavor_wine")
   const veryBad = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(1)`);
   const bad = flavor[index].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(2)`);
@@ -66,4 +65,3 @@ for (let i = 0; i < n_wine; i++) {
   }
 }
 
-console.log(wines[0]);

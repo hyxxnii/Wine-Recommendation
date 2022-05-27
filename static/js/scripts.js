@@ -109,8 +109,6 @@ function onMakeCard(nth){
     const kind = popUp.querySelector(".wine-kind");
     kind.innerText = tempObj['kind'][nth];
 }
-
-console.log(resultCardAll[0].querySelector("img").src);
 form.addEventListener("submit", onSubmit);
 // form에 무슨 일이 생기는지 계속 듣고 있어라~
 // submit하는 일이 생기면 onSubmit 함수를 실행시켜라
