@@ -5,16 +5,16 @@ import pickle
 def food_recommendation(input_name):
 # 데이터 불러오기
     # 와인 데이터
-    with open('../static/assets/data/wine_final.pickle', 'rb') as f:
+    with open('static/assets/data/wine.pkl', 'rb') as f:
         data = pickle.load(f)
     # 음식 유사도
-    with open('../static/assets/data/food_sim.pickle', 'rb') as f:
+    with open('static/assets/data/food_sim.pickle', 'rb') as f:
         food_sim = pickle.load(f)
     # 맛 유사도
-    with open('../static/assets/data/flavor_sim.pickle', 'rb') as f:
+    with open('static/assets/data/flavor_sim.pickle', 'rb') as f:
         flavor_sim = pickle.load(f)
     # 품종 유사도
-    with open('../static/assets/data/kind_sim.pickle', 'rb') as f:
+    with open('static/assets/data/kind_sim.pickle', 'rb') as f:
         kind_sim = pickle.load(f)
 
     new_sim = 0.3 * flavor_sim + 0.2 * kind_sim + 0.5 * food_sim
@@ -30,7 +30,7 @@ def food_recommendation(input_name):
     # 유사도 Top 9의 index 추출
     top9_df = data.loc[score_series.index]
     top_9_indexes = list(top9_df[top9_df['종류'] == k].iloc[1:10].index)
-    top_9_id = list(top9_df[top9_df['종류'] == k].iloc[1:10]['id'])
+    top_9_id = list(top9_df[top9_df['종류'] == k].iloc[1:10]['index'])
     top_9_kind = list(top9_df[top9_df['종류'] == k].iloc[1:10]['품종'])
     top_9_sugar = list(top9_df[top9_df['종류'] == k].iloc[1:10]['당도'])
     top_9_acid = list(top9_df[top9_df['종류'] == k].iloc[1:10]['산도'])

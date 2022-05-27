@@ -7,6 +7,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
+    result_dict = food_recommendation(name)
+    print(result_dict)
     return render_template("main.html", ishidden='hidden')
 
 @app.route("/main", methods=['POST'])
