@@ -7,28 +7,25 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return render_template("main.html")
+    return render_template("main.html", ishidden='hidden')
 
-@app.route("/main", methods=['GET', 'POST'])
+@app.route("/main", methods=['POST'])
 def main_get(name=None):
     if request.method == "POST":
         name = request.form["name"]
         return show_result(name)
     else:
-        return render_template("main.html")
+        return '안됨'
+        #return render_template("main.html", ishidden='hidden')
 
-@app.route("/show_result", methods=['POST'])
-def show_result(name):
+@app.route("/show_result", methods=['GET', 'POST'])
+def show_result(name=None):
     result_dict = food_recommendation(name)
     if request.method == "POST":
-        return render_template('main.html', json.dumps(result_dict))
+        return render_template('main.html', result_dict=json.dumps(result_dict), default=json_default, ishidden='hidden')#data=json.dumps(result_dict), ishidden='hidden')
     # 테스트
     #if request.method == "POST":
     #    return render_template('result.html', name)
-
-@app.route('/show_result')
-def about():
-    return render_template('result.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
