@@ -77,10 +77,6 @@
         <!--result-->
 <!--            scripts.js로 데이터 전달-->
 <!--                    <p>-->
-                        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-                         <script type="text/javascript">
-                            myVar = myFunc({{result_dict|tojson}})
-                         </script>
 
                     <section class="page-section bg-light d-none" id="portfolio">
                         <div class="container">
@@ -601,6 +597,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
         <!-- Core theme JS-->
 <!--        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>-->
     </body>

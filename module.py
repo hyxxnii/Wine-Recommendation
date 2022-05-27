@@ -36,6 +36,7 @@ def food_recommendation(input_name):
     top_9_acid = list(top9_df[top9_df['종류'] == k].iloc[1:10]['산도'])
     top_9_body = list(top9_df[top9_df['종류'] == k].iloc[1:10]['바디'])
     top_9_tanin = list(top9_df[top9_df['종류'] == k].iloc[1:10]['타닌'])
+    
     top_9_food = list(top9_df[top9_df['종류'] == k].iloc[1:10]['food'])
     top_9_aroma = list(top9_df[top9_df['종류'] == k].iloc[1:10]['aroma'])
     top_9_region = list(top9_df[top9_df['종류'] == k].iloc[1:10]['생산지역'])
