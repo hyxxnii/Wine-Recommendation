@@ -5,16 +5,16 @@ import pickle
 def food_recommendation(input_name):
 # 데이터 불러오기
     # 와인 데이터
-    with open('./data/wine_final.pickle', 'rb') as f:
+    with open('../static/assets/data/wine_final.pickle', 'rb') as f:
         data = pickle.load(f)
     # 음식 유사도
-    with open('./data/food_sim.pickle', 'rb') as f:
+    with open('../static/assets/data/food_sim.pickle', 'rb') as f:
         food_sim = pickle.load(f)
     # 맛 유사도
-    with open('./data/flavor_sim.pickle', 'rb') as f:
+    with open('../static/assets/data/flavor_sim.pickle', 'rb') as f:
         flavor_sim = pickle.load(f)
     # 품종 유사도
-    with open('./data/kind_sim.pickle', 'rb') as f:
+    with open('../static/assets/data/kind_sim.pickle', 'rb') as f:
         kind_sim = pickle.load(f)
 
     new_sim = 0.3 * flavor_sim + 0.2 * kind_sim + 0.5 * food_sim
