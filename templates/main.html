@@ -601,10 +601,12 @@
 <!--            scripts.js로 데이터 전달-->
         <script type="text/javascript">
             let result_dict = {{result_dict|tojson}};
-            if(result_dict !== ""){
+            if(localStorage.getItem("inputWineName")){
                 console.log(result_dict)
                 document.querySelector("#portfolio").classList.toggle('d-none')
                 location.href = "#portfolio";
+                console.log(4)
+                form.querySelector("#submitButton").textContent = "다시 제출";
             }
         </script>
     </body>
