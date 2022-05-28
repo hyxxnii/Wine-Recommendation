@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\VSC_WS\project\wine\Wine-Recommendation\venv"
+VIRTUAL_ENV="C:\Users\beach\Desktop\wine_\Wine-Recommendation\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
