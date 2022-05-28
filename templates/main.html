@@ -75,11 +75,6 @@
                     <input class="form-control" name="name" type="text" placeholder="Enter wine name" required/>
                     <div class="text-center"><input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"></div>
         <!--result-->
-<!--            scripts.js로 데이터 전달-->
-                    <script type="text/javascript">
-                        let result_dict = {{result_dict|tojson}};
-                        console.log(result_dict);
-                    </script>
 <!--                    <p>-->
 
                     <section class="page-section bg-light d-none" id="portfolio">
@@ -602,7 +597,15 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <!-- Core theme JS-->
-<!--        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>-->
+        
+<!--            scripts.js로 데이터 전달-->
+        <script type="text/javascript">
+            let result_dict = {{result_dict|tojson}};
+            if(result_dict !== ""){
+                console.log(result_dict)
+                document.querySelector("#portfolio").classList.toggle('d-none')
+                location.href = "#portfolio";
+            }
+        </script>
     </body>
 </html>

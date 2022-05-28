@@ -11,6 +11,7 @@ def main():
 
 @app.route("/main", methods=['POST'])
 def main_get(name=None):
+    print("check1")
     if request.method == "POST":
         name = request.form["name"]
         return show_result(name)
