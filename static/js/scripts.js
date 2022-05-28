@@ -62,13 +62,10 @@ console.log(form.querySelector("input").value);
 // event => submit하는 상황 자체
 function onSubmit(event){
     // preventDefault(): 모든 event에 대해 default로 작용하는 것(e.g. 창 새로고침)을 막음 !!
-    event.preventDefault();
-    alert("check");
-    myVar = '{{result_dict|tojson|safe}}'
+    //event.preventDefault();
     // console.log가 print()느낌 (잘 됐나 확인~)
     console.log(form.querySelector("input").value);
-    console.log(myVar)
-    alert("check2");
+    console.log(result_dict)
     // const: 절대 변수(값 변경 불가능) 할당, let: 변수 (값 변경 가능), var: 옛날 버전
     const result = document.querySelector("#portfolio");
     result.classList.toggle('d-none')

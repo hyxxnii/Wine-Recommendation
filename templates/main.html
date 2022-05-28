@@ -71,11 +71,15 @@
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
                 
-                <form id="contactForm" method="POST" action="/main">
+                <form id="contactForm" method="POST" action="/main" onsubmit="">
                     <input class="form-control" name="name" type="text" placeholder="Enter wine name" required/>
                     <div class="text-center"><input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"></div>
         <!--result-->
 <!--            scripts.js로 데이터 전달-->
+                    <script type="text/javascript">
+                        let result_dict = {{result_dict|tojson}};
+                        console.log(result_dict);
+                    </script>
 <!--                    <p>-->
 
                     <section class="page-section bg-light d-none" id="portfolio">
