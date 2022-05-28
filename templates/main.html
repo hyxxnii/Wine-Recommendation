@@ -17,6 +17,7 @@
         <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     </head>
     <body id="page-top">
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
@@ -73,7 +74,9 @@
                 
                 <form id="contactForm" method="POST" action="/main" onsubmit="">
                     <input class="form-control" name="name" type="text" placeholder="Enter wine name" required/>
-                    <div class="text-center"><input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit"></div>
+                    <div class="text-center">
+                        <input class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" value="제출">
+                    </div>
         <!--result-->
 <!--                    <p>-->
 
@@ -605,8 +608,7 @@
                 console.log(result_dict)
                 document.querySelector("#portfolio").classList.toggle('d-none')
                 location.href = "#portfolio";
-                console.log(4)
-                form.querySelector("#submitButton").textContent = "다시 제출";
+                form.querySelector("#submitButton").value = "다시 제출"
             }
         </script>
     </body>

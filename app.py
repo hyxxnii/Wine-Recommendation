@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 import json
 from module import *
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, redirect, request, render_template, jsonify
 
 app = Flask(__name__)
+TEMPLATES_AUTO_RELOAD = True
 
 
 @app.route("/")
 def main():
+    result_dict = jsonify()
     return render_template("main.html", result_dict=json.dumps(""), ishidden='hidden')
 
 
@@ -33,6 +35,18 @@ def show_result(name=None):
     # if request.method == "POST":
     #    return render_template('result.html', name)
 
+# No cacheing at all for API endpoints.
 
-if __name__ == "__main__":
+
+@app.after_request
+def add_header(response):
+    # response.cache_control.no_store = True
+    if 'Cache-Control' not in response.headers:
+        response.headers['Cache-Control'] = 'no-store'
+    return response
+
+
+if __name__ == '__main__':
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 300
     app.run(debug=True)
