@@ -1,5 +1,3 @@
-
-data/wine.pkl
-data/kind_sim.pickle
-data/food_sim.pickle
-data/flavor_sim.pickle
+static/assets/data/flavor_sim.pickle
+static/assets/data/food_sim.pickle
+static/assets/data/kind_sim.pickle
