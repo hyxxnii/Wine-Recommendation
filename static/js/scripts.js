@@ -62,12 +62,9 @@ console.log(form.querySelector("input").value);
 // event => submit하는 상황 자체
 function onSubmit(event){
     // preventDefault(): 모든 event에 대해 default로 작용하는 것(e.g. 창 새로고침)을 막음 !!
-    event.preventDefault();
     // console.log가 print()느낌 (잘 됐나 확인~)
-    console.log(form.querySelector("input").value);
     // const: 절대 변수(값 변경 불가능) 할당, let: 변수 (값 변경 가능), var: 옛날 버전
-    const result = document.querySelector("#portfolio");
-    result.classList.toggle('d-none')
+    localStorage.setItem("inputWineName", form.querySelector("input").value);
 //  toggle: 껐다 켰다 기능 -> 있으면 빼고 없으면 넣는? => 처음에 d-none이 있으니깐 이 함수가 실행되면 d-none 빼라 => visible
 //  addList: 넣기만 하는 기능
     let step;
