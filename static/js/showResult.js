@@ -24,6 +24,7 @@ function onMakeCard(nth, result_obj){
     const winePrice = card.querySelector(".wine-price");
     wineName.innerText = result_obj['name'][nth];
     winePrice.innerText = result_obj['price'][nth];
+
     wineImg.src = wineImgUrl;
 
     const popUp = popUpCardAll[nth];
@@ -31,3 +32,6 @@ function onMakeCard(nth, result_obj){
     kind.innerText = result_obj['kind'][nth];
 }
 
+function hadnleNoImg(e){
+    e.target.src = "../static/assets/img/wineImg/noImg.jpg"
+}
