@@ -35,3 +35,7 @@ function onMakeCard(nth, result_obj){
 function hadnleNoImg(e){
     e.target.src = "../static/assets/img/wineImg/noImg.jpg"
 }
+
+document.querySelectorAll(".portfolio-item img").forEach(comp =>
+    comp.addEventListener("error", hadnleNoImg)
+);
