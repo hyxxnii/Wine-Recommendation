@@ -3,3 +3,4 @@ static/assets/data/kind_sim.pickle
 static/assets/data/flavor_sim.pickle
 
 venv/
+__pycache__/
