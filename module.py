@@ -18,11 +18,9 @@ def food_recommendation(input_name):
         kind_sim = pickle.load(f)
 
     new_sim = 0.3 * flavor_sim + 0.2 * kind_sim + 0.5 * food_sim
-
     # 고유 id로 index 찾기
     idx = data.index[data['이름'] == input_name].tolist()  # Int64Index 형식이라 list로 바꾸어줌
     k = data.iloc[idx[0]]['종류']  # 와인 종류
-
     # 해당 index의 유사도 리스트 sort in descending order
     score_series = pd.Series(new_sim[idx[0]]).sort_values(ascending=False)
 
