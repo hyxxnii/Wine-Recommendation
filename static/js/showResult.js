@@ -15,6 +15,8 @@ function showResult(result_dict){
 }
 
 function onMakeCard(nth, result_obj){
+    const list_flavor = ["body", "acid", "sugar", "tanin"];
+
     const card = resultCardAll[nth];
     const name = result_obj['name'][nth];
 
@@ -32,12 +34,37 @@ function onMakeCard(nth, result_obj){
     const wine__food = popUp.querySelector(".wine-food");
     const wine__aroma = popUp.querySelector(".wine-aroma");
     const wine__region = popUp.querySelector(".wine-region");
+
+
     popUp.querySelector(".wine-name").innerText = result_obj['name'][nth];
     wine__kind.innerText = result_obj['kind'][nth];
     wine__region.innerText = result_obj['region'][nth];
     wine__food.innerText = result_obj['food'][nth];
     wine__aroma.innerText = result_obj['aroma'][nth];
-    
+
+    for (let flavorType of list_flavor) {
+        check(nth, flavorType, result_obj[flavorType]);
+}
+
+function check(nth, flavorType, amounts) {
+    const flavor = document.querySelectorAll(".flavor_wine")
+    const veryBad = flavor[nth].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(1)`);
+    const bad = flavor[nth].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(2)`);
+    const soSo = flavor[nth].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(3)`);
+    const good = flavor[nth].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(4)`);
+    const veryGood = flavor[nth].querySelector(`.${flavorType} .flavor_checkBox .circle:nth-child(5)`);
+    if (amounts[nth] == 5) {
+      veryGood.style.backgroundColor = "black";
+    } else if (amounts[nth] == 4) {
+      good.style.backgroundColor = "black";
+    } else if (amounts[nth] == 3) {
+      soSo.style.backgroundColor = "black";
+    } else if (amounts[nth] == 2) {
+      bad.style.backgroundColor = "black";
+    } else if (amounts[nth] == 1) {
+      veryBad.style.backgroundColor = "black";
+    }
+  }
 }
 
 function hadnleNoImg(e){
